@@ -1,0 +1,13 @@
+{
+  "facebook-login": {
+    "provider": "facebook",
+    "module": "passport-facebook",
+    "clientID": "331968360486223",
+    "clientSecret": "d5377a1e7e547a26b00e76b285072554",
+    "callbackURL": "http://grape.local:3000/auth/facebook/callback",
+    "authPath": "/auth/facebook",
+    "callbackPath": "/auth/facebook/callback",
+    "successRedirect": "/api/Users/me",
+    "scope": ["public_profile"]
+  }
+}
