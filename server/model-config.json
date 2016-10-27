@@ -40,5 +40,9 @@
   "UserIdentity": {
     "dataSource": "db",
     "public": true
+  },
+  "Grape": {
+    "dataSource": "db",
+    "public": true
   }
 }

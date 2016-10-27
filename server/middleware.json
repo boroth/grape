@@ -15,7 +15,7 @@
     "helmet#frameguard": {
       "params": [
         "deny"
-       ]
+      ]
     },
     "helmet#hsts": {
       "params": {
@@ -31,7 +31,9 @@
     }
   },
   "session:before": {
-    "cookie-parser": { "params": "test secret" }
+    "cookie-parser": {
+      "params": "test secret"
+    }
   },
   "session": {
     "express-session": {
@@ -51,7 +53,11 @@
       ]
     }
   },
-  "files": {},
+  "files": {
+    "loopback#static": {
+      "params": "$!../client"
+    }
+  },
   "final": {
     "loopback#urlNotFound": {}
   },

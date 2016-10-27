@@ -8,6 +8,13 @@ var PassportConfigurator =
 var app = module.exports = loopback();
 
 app.start = function() {
+
+  // Setup relationships
+  var User = app.models.User;
+  var Grape = app.models.Grape;
+  User.hasMany(Grape, { as: 'grapes', foreignKey: 'userId' });
+  Grape.hasMany(User, { as: 'users', foreignKey: 'grapeId' });
+
   // start the web server
   return app.listen(function() {
     app.emit('started');
