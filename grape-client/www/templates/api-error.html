@@ -1,0 +1,16 @@
+<ion-modal-view>
+    <ion-header-bar>
+        <h1 class="title">Uh Oh!</h1>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <p>There was some sort of error, see below:</p>
+
+        <p ng-repeat="message in errorMessages" class="assertive">
+            {{ message }}
+        </p>
+
+        <p class="text-center">
+            <button type="button" class="button button-block" ng-click="modal.hide()">Back</button>
+        </p>
+    </ion-content>
+</ion-modal-view>

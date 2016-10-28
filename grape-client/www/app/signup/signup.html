@@ -1,6 +1,6 @@
-<ion-view view-title="Sign Up" name="login-view">
+<ion-view view-title="Sign Up" name="signup-view">
     <ion-content class="padding">
-        <form name="signup_form" ng-submit="vm.signup()" novalidate>
+        <form name="signup_form" ng-submit="signup()">
             <div class="list list-inset">
                 <div class="item item-input" grape-form-field="username">
                     <input type="text" placeholder="Username" ng-model="vm.user.username" required />
@@ -27,11 +27,13 @@
                     <input type="password"
                            placeholder="Confirm Password"
                            ng-model="vm.password2"
-                           ui-validate="{ match: $value == vm.user.password }"
+                           ui-validate="{ match: '$value == vm.user.password' }"
+                           ui-validate-watch="'vm.user.password'"
                            required />
                 </div>
             </div>
-            <div ng-show="signup_from.$submitted" class="assertive">
+
+            <div ng-show="signup_form.$submitted" class="assertive">
                 <div ng-messages="signup_form.email.$error">
                     <div ng-message="email">Please enter a valid email.</div>
                 </div>

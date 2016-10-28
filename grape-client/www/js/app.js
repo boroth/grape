@@ -14,7 +14,8 @@ angular.module('starter', [
     'ionic',
     'starter.controllers',
 
-    // Common Directves
+    // Common Directives
+    'Common.Directives.ngSubmit',
     'Common.GrapeFormField',
 
     // Common Services
