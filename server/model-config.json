@@ -15,34 +15,34 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "grape-mysql"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "grape-mysql",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "grape-mysql",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "grape-mysql",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "grape-mysql",
     "public": false
   },
   "UserCredential": {
-    "dataSource": "db",
+    "dataSource": "grape-mysql",
     "public": true
   },
   "UserIdentity": {
-    "dataSource": "db",
+    "dataSource": "grape-mysql",
     "public": true
   },
   "Grape": {
-    "dataSource": "db",
+    "dataSource": "grape-mysql",
     "public": true
   }
 }

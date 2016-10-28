@@ -5,7 +5,25 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'Grape.Login', 'lbServices'])
+angular.module('starter', [
+    // Angular modules
+    'ngMessages',
+    'ui.validate',
+
+    // Ionic
+    'ionic',
+    'starter.controllers',
+
+    // Common Directves
+    'Common.GrapeFormField',
+
+    // Common Services
+    'lbServices',
+
+    // Grape Modules
+    'Grape.Login',
+    'Grape.Create'
+])
 
     .run(function ($ionicPlatform, $rootScope, $user, $state) {
         $ionicPlatform.ready(function () {
@@ -48,49 +66,30 @@ angular.module('starter', ['ionic', 'starter.controllers', 'Grape.Login', 'lbSer
             })
 
             // setup an abstract state for the tabs directive
-            .state('tab', {
-                url: '/tab',
+            .state('grape', {
+                url: '/grape',
                 abstract: true,
                 templateUrl: 'templates/tabs.html'
             })
 
             // Each tab has its own nav history stack:
 
-            .state('tab.dash', {
+            .state('grape.dash', {
                 url: '/dash',
                 views: {
-                    'tab-dash': {
+                    'grape-dash': {
                         templateUrl: 'templates/tab-dash.html',
                         controller: 'DashCtrl'
                     }
                 }
             })
 
-            .state('tab.chats', {
-                url: '/chats',
+            .state('grape.create', {
+                url: '/create',
                 views: {
-                    'tab-chats': {
-                        templateUrl: 'templates/tab-chats.html',
-                        controller: 'ChatsCtrl'
-                    }
-                }
-            })
-            .state('tab.chat-detail', {
-                url: '/chats/:chatId',
-                views: {
-                    'tab-chats': {
-                        templateUrl: 'templates/chat-detail.html',
-                        controller: 'ChatDetailCtrl'
-                    }
-                }
-            })
-
-            .state('tab.account', {
-                url: '/account',
-                views: {
-                    'tab-account': {
-                        templateUrl: 'templates/tab-account.html',
-                        controller: 'AccountCtrl'
+                    'grape-create': {
+                        templateUrl: 'app/grape-create/grape-create.html',
+                        controller: 'GrapeCreateController as vm'
                     }
                 }
             });
@@ -98,7 +97,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'Grape.Login', 'lbSer
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise( function($injector, $location) {
             var $state = $injector.get("$state");
-            $state.go('tab.dash');
+            $state.go('grape.dash');
         });
 
         $httpProvider.interceptors.push(function() {

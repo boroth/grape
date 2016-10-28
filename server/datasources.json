@@ -2,5 +2,16 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "grape-mysql": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "grape",
+    "password": "greengrapeisbestgrape",
+    "name": "grape-mysql",
+    "user": "grape-app",
+    "connector": "mysql",
+    "debug": false
   }
 }

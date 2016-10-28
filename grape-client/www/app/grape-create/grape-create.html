@@ -1,0 +1,28 @@
+<ion-view view-title="Create">
+    <ion-content class="padding">
+        <form name="create_grape_form" ng-submit="vm.create_grape()" novalidate>
+            <div class="list list-inset">
+                <div class="item item-input" grape-form-field="name">
+                    <input type="text" placeholder="Name" ng-model="vm.grape.name" required />
+                </div>
+                <div class="item item-input" grape-form-field="password">
+                    <input type="password" placeholder="Password" ng-model="vm.grape.password" required />
+                </div>
+                <div class="item item-input"">
+                    <input type="password"
+                           placeholder="Confirm Password"
+                           ng-model="vm.password2"
+                           required />
+                </div>
+            </div>
+            <div ng-show="create_grape_form.$submitted" class="assertive">
+                <div ng-show="!vm.grape.name">Grape must have a name.</div>
+                <div ng-show="!vm.grape.password">Grape must have a password.</div>
+                <div ng-hide="vm.grape.password && vm.password2 && vm.grape.password == vm.password2">Passwords must match.</div>
+            </div>
+            <button type="submit" class="button button-block button-energized" ng-disabled="vm.submitting">
+                Create Grape
+            </button>
+        </form>
+    </ion-content>
+</ion-view>

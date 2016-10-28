@@ -2,12 +2,15 @@
     module.controller('LoginController', function ($scope, $state, User) {
         var vm = this;
 
-        this.login = function () {
+        vm.login = function () {
+            vm.loggingIn = true;
             User.login({
                 username: vm.username,
                 password: vm.password
             }).$promise.then(function (response) {
-                $state.go('tab.dash');
+                $state.go('grape.create');
+            }, function (error) {
+                vm.loggingIn = false;
             });
         }
     })
