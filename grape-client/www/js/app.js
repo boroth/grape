@@ -27,7 +27,7 @@ angular.module('starter', [
     'Grape.Create'
 ])
 
-    .run(function ($ionicPlatform, $rootScope, $user, $state) {
+    .run(function ($ionicPlatform, $rootScope, $user, $state, LoopBackAuth) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
@@ -44,7 +44,8 @@ angular.module('starter', [
 
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
             // Validate authentication
-            if ((!toState.data || toState.data._auth !== false) && toState.name != 'login' && !$user.data) {
+            var hasAccessToken = LoopBackAuth.accessTokenId;
+            if ( !hasAccessToken && (!toState.data || toState.data._auth !== false) && toState.name != 'login' && !$user.data) {
                 event.preventDefault();
 
                 // Go to login
@@ -74,6 +75,32 @@ angular.module('starter', [
                 url: '/signup',
                 controller: 'SignupController as vm',
                 templateUrl: 'app/signup/signup.html',
+                data: {
+                    _auth: false
+                }
+            })
+
+            .state('logout', {
+                url: '/logout',
+                controller: function ($scope, $state, LoopBackAuth, $ionicHistory, $ionicLoading) {
+                    $ionicLoading.show({template:'Logging out....'});
+
+                    // Clear authentication from storage
+                    LoopBackAuth.clearUser();
+                    LoopBackAuth.clearStorage();
+
+                    // Remove back button and clear history
+                    $ionicHistory.clearCache().then(function () {
+
+                        $ionicHistory.clearHistory();
+                        $ionicHistory.nextViewOptions({ disableBack: true, historyRoot: true });
+
+                        $ionicLoading.hide();
+                        
+                        $state.go('login', null, { reload: true });
+
+                    });
+                },
                 data: {
                     _auth: false
                 }

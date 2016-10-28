@@ -2,6 +2,11 @@
     module.controller('LoginController', function ($scope, $state, User) {
         var vm = this;
 
+        vm.username = '';
+        vm.password = '';
+
+        vm.loggingIn = false;
+
         vm.login = function () {
             vm.loggingIn = true;
             User.login({
