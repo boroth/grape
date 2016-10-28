@@ -1,7 +1,7 @@
 module.exports = function(app) {
     var User = app.models.User;
     var ACL = app.models.ACL;
-    User.hasMany(app.models.Grape, { as: 'grapes', foreignKey: 'userId' });
+    User.hasMany(app.models.Grape, { as: 'grapesCreated', foreignKey: 'userId' });
     ACL.create({
         accessType: ACL.ALL,
         permission: ACL.ALLOW,

@@ -231,30 +231,30 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "PUT",
             },
 
-            // INTERNAL. Use User.grapes.findById() instead.
-            "prototype$__findById__grapes": {
+            // INTERNAL. Use User.grapesCreated.findById() instead.
+            "prototype$__findById__grapesCreated": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/Users/:id/grapes/:fk",
+              url: urlBase + "/Users/:id/grapesCreated/:fk",
               method: "GET",
             },
 
-            // INTERNAL. Use User.grapes.destroyById() instead.
-            "prototype$__destroyById__grapes": {
+            // INTERNAL. Use User.grapesCreated.destroyById() instead.
+            "prototype$__destroyById__grapesCreated": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/Users/:id/grapes/:fk",
+              url: urlBase + "/Users/:id/grapesCreated/:fk",
               method: "DELETE",
             },
 
-            // INTERNAL. Use User.grapes.updateById() instead.
-            "prototype$__updateById__grapes": {
+            // INTERNAL. Use User.grapesCreated.updateById() instead.
+            "prototype$__updateById__grapesCreated": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/Users/:id/grapes/:fk",
+              url: urlBase + "/Users/:id/grapesCreated/:fk",
               method: "PUT",
             },
 
@@ -445,28 +445,28 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "GET",
             },
 
-            // INTERNAL. Use User.grapes() instead.
-            "prototype$__get__grapes": {
+            // INTERNAL. Use User.grapesCreated() instead.
+            "prototype$__get__grapesCreated": {
               isArray: true,
-              url: urlBase + "/Users/:id/grapes",
+              url: urlBase + "/Users/:id/grapesCreated",
               method: "GET",
             },
 
-            // INTERNAL. Use User.grapes.create() instead.
-            "prototype$__create__grapes": {
-              url: urlBase + "/Users/:id/grapes",
+            // INTERNAL. Use User.grapesCreated.create() instead.
+            "prototype$__create__grapesCreated": {
+              url: urlBase + "/Users/:id/grapesCreated",
               method: "POST",
             },
 
-            // INTERNAL. Use User.grapes.destroyAll() instead.
-            "prototype$__delete__grapes": {
-              url: urlBase + "/Users/:id/grapes",
+            // INTERNAL. Use User.grapesCreated.destroyAll() instead.
+            "prototype$__delete__grapesCreated": {
+              url: urlBase + "/Users/:id/grapesCreated",
               method: "DELETE",
             },
 
-            // INTERNAL. Use User.grapes.count() instead.
-            "prototype$__count__grapes": {
-              url: urlBase + "/Users/:id/grapes/count",
+            // INTERNAL. Use User.grapesCreated.count() instead.
+            "prototype$__count__grapesCreated": {
+              url: urlBase + "/Users/:id/grapesCreated/count",
               method: "GET",
             },
 
@@ -2121,27 +2121,27 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
         };
     /**
      * @ngdoc object
-     * @name lbServices.User.grapes
-     * @header lbServices.User.grapes
+     * @name lbServices.User.grapesCreated
+     * @header lbServices.User.grapesCreated
      * @object
      * @description
      *
-     * The object `User.grapes` groups methods
+     * The object `User.grapesCreated` groups methods
      * manipulating `Grape` instances related to `User`.
      *
-     * Call {@link lbServices.User#grapes User.grapes()}
+     * Call {@link lbServices.User#grapesCreated User.grapesCreated()}
      * to query all related instances.
      */
 
 
             /**
              * @ngdoc method
-             * @name lbServices.User#grapes
+             * @name lbServices.User#grapesCreated
              * @methodOf lbServices.User
              *
              * @description
              *
-             * Queries grapes of User.
+             * Queries grapesCreated of User.
              *
              * @param {Object=} parameters Request parameters.
              *
@@ -2164,20 +2164,20 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              * This usually means the response is a `Grape` object.)
              * </em>
              */
-        R.grapes = function() {
+        R.grapesCreated = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::get::User::grapes"];
+          var action = TargetResource["::get::User::grapesCreated"];
           return action.apply(R, arguments);
         };
 
             /**
              * @ngdoc method
-             * @name lbServices.User.grapes#count
-             * @methodOf lbServices.User.grapes
+             * @name lbServices.User.grapesCreated#count
+             * @methodOf lbServices.User.grapesCreated
              *
              * @description
              *
-             * Counts grapes of User.
+             * Counts grapesCreated of User.
              *
              * @param {Object=} parameters Request parameters.
              *
@@ -2199,20 +2199,20 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              *
              *  - `count` – `{number=}` -
              */
-        R.grapes.count = function() {
+        R.grapesCreated.count = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::count::User::grapes"];
+          var action = TargetResource["::count::User::grapesCreated"];
           return action.apply(R, arguments);
         };
 
             /**
              * @ngdoc method
-             * @name lbServices.User.grapes#create
-             * @methodOf lbServices.User.grapes
+             * @name lbServices.User.grapesCreated#create
+             * @methodOf lbServices.User.grapesCreated
              *
              * @description
              *
-             * Creates a new instance in grapes of this model.
+             * Creates a new instance in grapesCreated of this model.
              *
              * @param {Object=} parameters Request parameters.
              *
@@ -2237,20 +2237,20 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              * This usually means the response is a `Grape` object.)
              * </em>
              */
-        R.grapes.create = function() {
+        R.grapesCreated.create = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::create::User::grapes"];
+          var action = TargetResource["::create::User::grapesCreated"];
           return action.apply(R, arguments);
         };
 
             /**
              * @ngdoc method
-             * @name lbServices.User.grapes#createMany
-             * @methodOf lbServices.User.grapes
+             * @name lbServices.User.grapesCreated#createMany
+             * @methodOf lbServices.User.grapesCreated
              *
              * @description
              *
-             * Creates a new instance in grapes of this model.
+             * Creates a new instance in grapesCreated of this model.
              *
              * @param {Object=} parameters Request parameters.
              *
@@ -2275,20 +2275,20 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              * This usually means the response is a `Grape` object.)
              * </em>
              */
-        R.grapes.createMany = function() {
+        R.grapesCreated.createMany = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::createMany::User::grapes"];
+          var action = TargetResource["::createMany::User::grapesCreated"];
           return action.apply(R, arguments);
         };
 
             /**
              * @ngdoc method
-             * @name lbServices.User.grapes#destroyAll
-             * @methodOf lbServices.User.grapes
+             * @name lbServices.User.grapesCreated#destroyAll
+             * @methodOf lbServices.User.grapesCreated
              *
              * @description
              *
-             * Deletes all grapes of this model.
+             * Deletes all grapesCreated of this model.
              *
              * @param {Object=} parameters Request parameters.
              *
@@ -2306,26 +2306,26 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              *
              * This method returns no data.
              */
-        R.grapes.destroyAll = function() {
+        R.grapesCreated.destroyAll = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::delete::User::grapes"];
+          var action = TargetResource["::delete::User::grapesCreated"];
           return action.apply(R, arguments);
         };
 
             /**
              * @ngdoc method
-             * @name lbServices.User.grapes#destroyById
-             * @methodOf lbServices.User.grapes
+             * @name lbServices.User.grapesCreated#destroyById
+             * @methodOf lbServices.User.grapesCreated
              *
              * @description
              *
-             * Delete a related item by id for grapes.
+             * Delete a related item by id for grapesCreated.
              *
              * @param {Object=} parameters Request parameters.
              *
              *  - `id` – `{*}` - User id
              *
-             *  - `fk` – `{*}` - Foreign key for grapes
+             *  - `fk` – `{*}` - Foreign key for grapesCreated
              *
              * @param {function(Object,Object)=} successCb
              *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -2339,26 +2339,26 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              *
              * This method returns no data.
              */
-        R.grapes.destroyById = function() {
+        R.grapesCreated.destroyById = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::destroyById::User::grapes"];
+          var action = TargetResource["::destroyById::User::grapesCreated"];
           return action.apply(R, arguments);
         };
 
             /**
              * @ngdoc method
-             * @name lbServices.User.grapes#findById
-             * @methodOf lbServices.User.grapes
+             * @name lbServices.User.grapesCreated#findById
+             * @methodOf lbServices.User.grapesCreated
              *
              * @description
              *
-             * Find a related item by id for grapes.
+             * Find a related item by id for grapesCreated.
              *
              * @param {Object=} parameters Request parameters.
              *
              *  - `id` – `{*}` - User id
              *
-             *  - `fk` – `{*}` - Foreign key for grapes
+             *  - `fk` – `{*}` - Foreign key for grapesCreated
              *
              * @param {function(Object,Object)=} successCb
              *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -2375,26 +2375,26 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              * This usually means the response is a `Grape` object.)
              * </em>
              */
-        R.grapes.findById = function() {
+        R.grapesCreated.findById = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::findById::User::grapes"];
+          var action = TargetResource["::findById::User::grapesCreated"];
           return action.apply(R, arguments);
         };
 
             /**
              * @ngdoc method
-             * @name lbServices.User.grapes#updateById
-             * @methodOf lbServices.User.grapes
+             * @name lbServices.User.grapesCreated#updateById
+             * @methodOf lbServices.User.grapesCreated
              *
              * @description
              *
-             * Update a related item by id for grapes.
+             * Update a related item by id for grapesCreated.
              *
              * @param {Object=} parameters Request parameters.
              *
              *  - `id` – `{*}` - User id
              *
-             *  - `fk` – `{*}` - Foreign key for grapes
+             *  - `fk` – `{*}` - Foreign key for grapesCreated
              *
              * @param {Object} postData Request data.
              *
@@ -2415,9 +2415,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              * This usually means the response is a `Grape` object.)
              * </em>
              */
-        R.grapes.updateById = function() {
+        R.grapesCreated.updateById = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::updateById::User::grapes"];
+          var action = TargetResource["::updateById::User::grapesCreated"];
           return action.apply(R, arguments);
         };
 
@@ -4808,62 +4808,103 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "POST",
             },
 
-            // INTERNAL. Use User.grapes.findById() instead.
-            "::findById::User::grapes": {
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape#join
+             * @methodOf lbServices.Grape
+             *
+             * @description
+             *
+             * <em>
+             * (The remote method definition does not provide any description.)
+             * </em>
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `name` – `{string=}` -
+             *
+             *  - `password` – `{string=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `grape` – `{Grape=}` -
+             */
+            "join": {
+              url: urlBase + "/Grapes/join",
+              method: "POST",
+            },
+
+            // INTERNAL. Use User.grapesCreated.findById() instead.
+            "::findById::User::grapesCreated": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/Users/:id/grapes/:fk",
+              url: urlBase + "/Users/:id/grapesCreated/:fk",
               method: "GET",
             },
 
-            // INTERNAL. Use User.grapes.destroyById() instead.
-            "::destroyById::User::grapes": {
+            // INTERNAL. Use User.grapesCreated.destroyById() instead.
+            "::destroyById::User::grapesCreated": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/Users/:id/grapes/:fk",
+              url: urlBase + "/Users/:id/grapesCreated/:fk",
               method: "DELETE",
             },
 
-            // INTERNAL. Use User.grapes.updateById() instead.
-            "::updateById::User::grapes": {
+            // INTERNAL. Use User.grapesCreated.updateById() instead.
+            "::updateById::User::grapesCreated": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/Users/:id/grapes/:fk",
+              url: urlBase + "/Users/:id/grapesCreated/:fk",
               method: "PUT",
             },
 
-            // INTERNAL. Use User.grapes() instead.
-            "::get::User::grapes": {
+            // INTERNAL. Use User.grapesCreated() instead.
+            "::get::User::grapesCreated": {
               isArray: true,
-              url: urlBase + "/Users/:id/grapes",
+              url: urlBase + "/Users/:id/grapesCreated",
               method: "GET",
             },
 
-            // INTERNAL. Use User.grapes.create() instead.
-            "::create::User::grapes": {
-              url: urlBase + "/Users/:id/grapes",
+            // INTERNAL. Use User.grapesCreated.create() instead.
+            "::create::User::grapesCreated": {
+              url: urlBase + "/Users/:id/grapesCreated",
               method: "POST",
             },
 
-            // INTERNAL. Use User.grapes.createMany() instead.
-            "::createMany::User::grapes": {
+            // INTERNAL. Use User.grapesCreated.createMany() instead.
+            "::createMany::User::grapesCreated": {
               isArray: true,
-              url: urlBase + "/Users/:id/grapes",
+              url: urlBase + "/Users/:id/grapesCreated",
               method: "POST",
             },
 
-            // INTERNAL. Use User.grapes.destroyAll() instead.
-            "::delete::User::grapes": {
-              url: urlBase + "/Users/:id/grapes",
+            // INTERNAL. Use User.grapesCreated.destroyAll() instead.
+            "::delete::User::grapesCreated": {
+              url: urlBase + "/Users/:id/grapesCreated",
               method: "DELETE",
             },
 
-            // INTERNAL. Use User.grapes.count() instead.
-            "::count::User::grapes": {
-              url: urlBase + "/Users/:id/grapes/count",
+            // INTERNAL. Use User.grapesCreated.count() instead.
+            "::count::User::grapesCreated": {
+              url: urlBase + "/Users/:id/grapesCreated/count",
               method: "GET",
             },
           }

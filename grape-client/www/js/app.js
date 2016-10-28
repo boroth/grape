@@ -24,7 +24,8 @@ angular.module('starter', [
     // Grape Modules
     'Grape.Login',
     'Grape.Signup',
-    'Grape.Create'
+    'Grape.Create',
+    'Grape.Join'
 ])
 
     .run(function ($ionicPlatform, $rootScope, $user, $state, LoopBackAuth) {
@@ -96,7 +97,7 @@ angular.module('starter', [
                         $ionicHistory.nextViewOptions({ disableBack: true, historyRoot: true });
 
                         $ionicLoading.hide();
-                        
+
                         $state.go('login', null, { reload: true });
 
                     });
@@ -131,6 +132,16 @@ angular.module('starter', [
                     'grape-create': {
                         templateUrl: 'app/grape-create/grape-create.html',
                         controller: 'GrapeCreateController as vm'
+                    }
+                }
+            })
+
+            .state('grape.join', {
+                url: '/join',
+                views: {
+                    'grape-join': {
+                        templateUrl: 'app/grape-join/grape-join.html',
+                        controller: 'GrapeJoinController as vm'
                     }
                 }
             });
