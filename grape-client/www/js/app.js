@@ -22,6 +22,7 @@ angular.module('starter', [
 
     // Grape Modules
     'Grape.Login',
+    'Grape.Signup',
     'Grape.Create'
 ])
 
@@ -42,7 +43,7 @@ angular.module('starter', [
 
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
             // Validate authentication
-            if (toState.name != 'login' && !$user.data) {
+            if ((!toState.data || toState.data._auth !== false) && toState.name != 'login' && !$user.data) {
                 event.preventDefault();
 
                 // Go to login
@@ -62,7 +63,19 @@ angular.module('starter', [
             .state('login', {
                 url: '/login',
                 controller: 'LoginController as vm',
-                templateUrl: 'app/login/login.html'
+                templateUrl: 'app/login/login.html',
+                data: {
+                    _auth: false
+                }
+            })
+
+            .state('signup', {
+                url: '/signup',
+                controller: 'SignupController as vm',
+                templateUrl: 'app/signup/signup.html',
+                data: {
+                    _auth: false
+                }
             })
 
             // setup an abstract state for the tabs directive

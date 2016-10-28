@@ -1,0 +1,47 @@
+<ion-view view-title="Sign Up" name="login-view">
+    <ion-content class="padding">
+        <form name="signup_form" ng-submit="vm.signup()" novalidate>
+            <div class="list list-inset">
+                <div class="item item-input" grape-form-field="username">
+                    <input type="text" placeholder="Username" ng-model="vm.user.username" required />
+
+                    <div ng-messages>
+                        <div ng-message="required">Username is required.</div>
+                    </div>
+                </div>
+                <div class="item item-input" grape-form-field="email">
+                    <input type="email" placeholder="Email" ng-model="vm.user.email" required />
+
+                    <div ng-messages>
+                        <div ng-message="required">Email is required.</div>
+                    </div>
+                </div>
+                <div class="item item-input" grape-form-field="password">
+                    <input type="password" placeholder="Password" ng-model="vm.user.password" required />
+
+                    <div ng-messages>
+                        <div ng-message="required">Password is required.</div>
+                    </div>
+                </div>
+                <div class="item item-input" grape-form-field="password2">
+                    <input type="password"
+                           placeholder="Confirm Password"
+                           ng-model="vm.password2"
+                           ui-validate="{ match: $value == vm.user.password }"
+                           required />
+                </div>
+            </div>
+            <div ng-show="signup_from.$submitted" class="assertive">
+                <div ng-messages="signup_form.email.$error">
+                    <div ng-message="email">Please enter a valid email.</div>
+                </div>
+
+                <div ng-hide="vm.user.password && vm.password2 && vm.user.password == vm.password2">Passwords must match.</div>
+            </div>
+
+            <button type="submit" class="button button-block button-balanced" ng-disabled="vm.submitting">
+                Sign Up
+            </button>
+        </form>
+    </ion-content>
+</ion-view>

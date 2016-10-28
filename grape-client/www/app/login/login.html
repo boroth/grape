@@ -9,8 +9,11 @@
                     <input type="password" placeholder="Password" ng-model="vm.password">
                 </label>
             </div>
-            <button type="submit" class="button button-block button-calm" ng-disabled="vm.loggingIn">
+            <button type="submit" class="button button-block button-balanced" ng-disabled="vm.loggingIn">
                 Login
+            </button>
+            <button ui-sref="signup()" class="button button-block button-calm" ng-disabled="vm.loggingIn">
+                Sign Up
             </button>
         </form>
     </ion-content>
