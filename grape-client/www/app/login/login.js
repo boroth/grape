@@ -1,5 +1,5 @@
 (function (module) {
-    module.controller('LoginController', function ($scope, $state, User) {
+    module.controller('LoginController', function ($scope, $state, GrapeUser) {
         var vm = this;
 
         vm.username = '';
@@ -9,7 +9,7 @@
 
         vm.login = function () {
             vm.loggingIn = true;
-            User.login({
+            GrapeUser.login({
                 username: vm.username,
                 password: vm.password
             }).$promise.then(function (response) {

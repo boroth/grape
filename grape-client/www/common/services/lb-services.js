@@ -231,33 +231,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "PUT",
             },
 
-            // INTERNAL. Use User.grapesCreated.findById() instead.
-            "prototype$__findById__grapesCreated": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/Users/:id/grapesCreated/:fk",
-              method: "GET",
-            },
-
-            // INTERNAL. Use User.grapesCreated.destroyById() instead.
-            "prototype$__destroyById__grapesCreated": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/Users/:id/grapesCreated/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use User.grapesCreated.updateById() instead.
-            "prototype$__updateById__grapesCreated": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/Users/:id/grapesCreated/:fk",
-              method: "PUT",
-            },
-
             /**
              * @ngdoc method
              * @name lbServices.User#prototype$__get__accessTokens
@@ -442,31 +415,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
             // INTERNAL. Use User.credentials.count() instead.
             "prototype$__count__credentials": {
               url: urlBase + "/Users/:id/credentials/count",
-              method: "GET",
-            },
-
-            // INTERNAL. Use User.grapesCreated() instead.
-            "prototype$__get__grapesCreated": {
-              isArray: true,
-              url: urlBase + "/Users/:id/grapesCreated",
-              method: "GET",
-            },
-
-            // INTERNAL. Use User.grapesCreated.create() instead.
-            "prototype$__create__grapesCreated": {
-              url: urlBase + "/Users/:id/grapesCreated",
-              method: "POST",
-            },
-
-            // INTERNAL. Use User.grapesCreated.destroyAll() instead.
-            "prototype$__delete__grapesCreated": {
-              url: urlBase + "/Users/:id/grapesCreated",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use User.grapesCreated.count() instead.
-            "prototype$__count__grapesCreated": {
-              url: urlBase + "/Users/:id/grapesCreated/count",
               method: "GET",
             },
 
@@ -2117,307 +2065,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
         R.credentials.updateById = function() {
           var TargetResource = $injector.get("UserCredential");
           var action = TargetResource["::updateById::User::credentials"];
-          return action.apply(R, arguments);
-        };
-    /**
-     * @ngdoc object
-     * @name lbServices.User.grapesCreated
-     * @header lbServices.User.grapesCreated
-     * @object
-     * @description
-     *
-     * The object `User.grapesCreated` groups methods
-     * manipulating `Grape` instances related to `User`.
-     *
-     * Call {@link lbServices.User#grapesCreated User.grapesCreated()}
-     * to query all related instances.
-     */
-
-
-            /**
-             * @ngdoc method
-             * @name lbServices.User#grapesCreated
-             * @methodOf lbServices.User
-             *
-             * @description
-             *
-             * Queries grapesCreated of User.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - User id
-             *
-             *  - `filter` – `{object=}` -
-             *
-             * @param {function(Array.<Object>,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Array.<Object>} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Grape` object.)
-             * </em>
-             */
-        R.grapesCreated = function() {
-          var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::get::User::grapesCreated"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.User.grapesCreated#count
-             * @methodOf lbServices.User.grapesCreated
-             *
-             * @description
-             *
-             * Counts grapesCreated of User.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - User id
-             *
-             *  - `where` – `{object=}` - Criteria to match model instances
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * Data properties:
-             *
-             *  - `count` – `{number=}` -
-             */
-        R.grapesCreated.count = function() {
-          var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::count::User::grapesCreated"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.User.grapesCreated#create
-             * @methodOf lbServices.User.grapesCreated
-             *
-             * @description
-             *
-             * Creates a new instance in grapesCreated of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - User id
-             *
-             * @param {Object} postData Request data.
-             *
-             * This method expects a subset of model properties as request parameters.
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Grape` object.)
-             * </em>
-             */
-        R.grapesCreated.create = function() {
-          var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::create::User::grapesCreated"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.User.grapesCreated#createMany
-             * @methodOf lbServices.User.grapesCreated
-             *
-             * @description
-             *
-             * Creates a new instance in grapesCreated of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - User id
-             *
-             * @param {Object} postData Request data.
-             *
-             * This method expects a subset of model properties as request parameters.
-             *
-             * @param {function(Array.<Object>,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Array.<Object>} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Grape` object.)
-             * </em>
-             */
-        R.grapesCreated.createMany = function() {
-          var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::createMany::User::grapesCreated"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.User.grapesCreated#destroyAll
-             * @methodOf lbServices.User.grapesCreated
-             *
-             * @description
-             *
-             * Deletes all grapesCreated of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - User id
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * This method returns no data.
-             */
-        R.grapesCreated.destroyAll = function() {
-          var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::delete::User::grapesCreated"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.User.grapesCreated#destroyById
-             * @methodOf lbServices.User.grapesCreated
-             *
-             * @description
-             *
-             * Delete a related item by id for grapesCreated.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - User id
-             *
-             *  - `fk` – `{*}` - Foreign key for grapesCreated
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * This method returns no data.
-             */
-        R.grapesCreated.destroyById = function() {
-          var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::destroyById::User::grapesCreated"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.User.grapesCreated#findById
-             * @methodOf lbServices.User.grapesCreated
-             *
-             * @description
-             *
-             * Find a related item by id for grapesCreated.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - User id
-             *
-             *  - `fk` – `{*}` - Foreign key for grapesCreated
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Grape` object.)
-             * </em>
-             */
-        R.grapesCreated.findById = function() {
-          var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::findById::User::grapesCreated"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.User.grapesCreated#updateById
-             * @methodOf lbServices.User.grapesCreated
-             *
-             * @description
-             *
-             * Update a related item by id for grapesCreated.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - User id
-             *
-             *  - `fk` – `{*}` - Foreign key for grapesCreated
-             *
-             * @param {Object} postData Request data.
-             *
-             * This method expects a subset of model properties as request parameters.
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Grape` object.)
-             * </em>
-             */
-        R.grapesCreated.updateById = function() {
-          var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::updateById::User::grapesCreated"];
           return action.apply(R, arguments);
         };
 
@@ -4274,6 +3921,137 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
           { 'id': '@id' },
           {
 
+            // INTERNAL. Use Grape.users.findById() instead.
+            "prototype$__findById__users": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/users/:fk",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Grape.users.destroyById() instead.
+            "prototype$__destroyById__users": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/users/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Grape.users.updateById() instead.
+            "prototype$__updateById__users": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/users/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Grape.users.link() instead.
+            "prototype$__link__users": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/users/rel/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Grape.users.unlink() instead.
+            "prototype$__unlink__users": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/users/rel/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Grape.users.exists() instead.
+            "prototype$__exists__users": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/users/rel/:fk",
+              method: "HEAD",
+            },
+
+            // INTERNAL. Use Grape.grapeEntries.findById() instead.
+            "prototype$__findById__grapeEntries": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/grapeEntries/:fk",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Grape.grapeEntries.destroyById() instead.
+            "prototype$__destroyById__grapeEntries": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/grapeEntries/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Grape.grapeEntries.updateById() instead.
+            "prototype$__updateById__grapeEntries": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/grapeEntries/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Grape.users() instead.
+            "prototype$__get__users": {
+              isArray: true,
+              url: urlBase + "/Grapes/:id/users",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Grape.users.create() instead.
+            "prototype$__create__users": {
+              url: urlBase + "/Grapes/:id/users",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Grape.users.destroyAll() instead.
+            "prototype$__delete__users": {
+              url: urlBase + "/Grapes/:id/users",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Grape.users.count() instead.
+            "prototype$__count__users": {
+              url: urlBase + "/Grapes/:id/users/count",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Grape.grapeEntries() instead.
+            "prototype$__get__grapeEntries": {
+              isArray: true,
+              url: urlBase + "/Grapes/:id/grapeEntries",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Grape.grapeEntries.create() instead.
+            "prototype$__create__grapeEntries": {
+              url: urlBase + "/Grapes/:id/grapeEntries",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Grape.grapeEntries.destroyAll() instead.
+            "prototype$__delete__grapeEntries": {
+              url: urlBase + "/Grapes/:id/grapeEntries",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Grape.grapeEntries.count() instead.
+            "prototype$__count__grapeEntries": {
+              url: urlBase + "/Grapes/:id/grapeEntries/count",
+              method: "GET",
+            },
+
             /**
              * @ngdoc method
              * @name lbServices.Grape#create
@@ -4849,62 +4627,95 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "POST",
             },
 
-            // INTERNAL. Use User.grapesCreated.findById() instead.
-            "::findById::User::grapesCreated": {
+            // INTERNAL. Use GrapeUser.joinedgrapes.findById() instead.
+            "::findById::GrapeUser::joinedgrapes": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/Users/:id/grapesCreated/:fk",
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes/:fk",
               method: "GET",
             },
 
-            // INTERNAL. Use User.grapesCreated.destroyById() instead.
-            "::destroyById::User::grapesCreated": {
+            // INTERNAL. Use GrapeUser.joinedgrapes.destroyById() instead.
+            "::destroyById::GrapeUser::joinedgrapes": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/Users/:id/grapesCreated/:fk",
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes/:fk",
               method: "DELETE",
             },
 
-            // INTERNAL. Use User.grapesCreated.updateById() instead.
-            "::updateById::User::grapesCreated": {
+            // INTERNAL. Use GrapeUser.joinedgrapes.updateById() instead.
+            "::updateById::GrapeUser::joinedgrapes": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/Users/:id/grapesCreated/:fk",
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes/:fk",
               method: "PUT",
             },
 
-            // INTERNAL. Use User.grapesCreated() instead.
-            "::get::User::grapesCreated": {
-              isArray: true,
-              url: urlBase + "/Users/:id/grapesCreated",
-              method: "GET",
+            // INTERNAL. Use GrapeUser.joinedgrapes.link() instead.
+            "::link::GrapeUser::joinedgrapes": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes/rel/:fk",
+              method: "PUT",
             },
 
-            // INTERNAL. Use User.grapesCreated.create() instead.
-            "::create::User::grapesCreated": {
-              url: urlBase + "/Users/:id/grapesCreated",
-              method: "POST",
-            },
-
-            // INTERNAL. Use User.grapesCreated.createMany() instead.
-            "::createMany::User::grapesCreated": {
-              isArray: true,
-              url: urlBase + "/Users/:id/grapesCreated",
-              method: "POST",
-            },
-
-            // INTERNAL. Use User.grapesCreated.destroyAll() instead.
-            "::delete::User::grapesCreated": {
-              url: urlBase + "/Users/:id/grapesCreated",
+            // INTERNAL. Use GrapeUser.joinedgrapes.unlink() instead.
+            "::unlink::GrapeUser::joinedgrapes": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes/rel/:fk",
               method: "DELETE",
             },
 
-            // INTERNAL. Use User.grapesCreated.count() instead.
-            "::count::User::grapesCreated": {
-              url: urlBase + "/Users/:id/grapesCreated/count",
+            // INTERNAL. Use GrapeUser.joinedgrapes.exists() instead.
+            "::exists::GrapeUser::joinedgrapes": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes/rel/:fk",
+              method: "HEAD",
+            },
+
+            // INTERNAL. Use GrapeUser.joinedgrapes() instead.
+            "::get::GrapeUser::joinedgrapes": {
+              isArray: true,
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes",
+              method: "GET",
+            },
+
+            // INTERNAL. Use GrapeUser.joinedgrapes.create() instead.
+            "::create::GrapeUser::joinedgrapes": {
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes",
+              method: "POST",
+            },
+
+            // INTERNAL. Use GrapeUser.joinedgrapes.createMany() instead.
+            "::createMany::GrapeUser::joinedgrapes": {
+              isArray: true,
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes",
+              method: "POST",
+            },
+
+            // INTERNAL. Use GrapeUser.joinedgrapes.destroyAll() instead.
+            "::delete::GrapeUser::joinedgrapes": {
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use GrapeUser.joinedgrapes.count() instead.
+            "::count::GrapeUser::joinedgrapes": {
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes/count",
+              method: "GET",
+            },
+
+            // INTERNAL. Use GrapeEntry.grape() instead.
+            "::get::GrapeEntry::grape": {
+              url: urlBase + "/GrapeEntries/:id/grape",
               method: "GET",
             },
           }
@@ -5152,6 +4963,3570 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
         */
         R.modelName = "Grape";
 
+    /**
+     * @ngdoc object
+     * @name lbServices.Grape.users
+     * @header lbServices.Grape.users
+     * @object
+     * @description
+     *
+     * The object `Grape.users` groups methods
+     * manipulating `GrapeUser` instances related to `Grape`.
+     *
+     * Call {@link lbServices.Grape#users Grape.users()}
+     * to query all related instances.
+     */
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape#users
+             * @methodOf lbServices.Grape
+             *
+             * @description
+             *
+             * Queries users of Grape.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             *  - `filter` – `{object=}` -
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+        R.users = function() {
+          var TargetResource = $injector.get("GrapeUser");
+          var action = TargetResource["::get::Grape::users"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape.users#count
+             * @methodOf lbServices.Grape.users
+             *
+             * @description
+             *
+             * Counts users of Grape.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+        R.users.count = function() {
+          var TargetResource = $injector.get("GrapeUser");
+          var action = TargetResource["::count::Grape::users"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape.users#create
+             * @methodOf lbServices.Grape.users
+             *
+             * @description
+             *
+             * Creates a new instance in users of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+        R.users.create = function() {
+          var TargetResource = $injector.get("GrapeUser");
+          var action = TargetResource["::create::Grape::users"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape.users#createMany
+             * @methodOf lbServices.Grape.users
+             *
+             * @description
+             *
+             * Creates a new instance in users of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+        R.users.createMany = function() {
+          var TargetResource = $injector.get("GrapeUser");
+          var action = TargetResource["::createMany::Grape::users"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape.users#destroyAll
+             * @methodOf lbServices.Grape.users
+             *
+             * @description
+             *
+             * Deletes all users of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.users.destroyAll = function() {
+          var TargetResource = $injector.get("GrapeUser");
+          var action = TargetResource["::delete::Grape::users"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape.users#destroyById
+             * @methodOf lbServices.Grape.users
+             *
+             * @description
+             *
+             * Delete a related item by id for users.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             *  - `fk` – `{*}` - Foreign key for users
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.users.destroyById = function() {
+          var TargetResource = $injector.get("GrapeUser");
+          var action = TargetResource["::destroyById::Grape::users"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape.users#exists
+             * @methodOf lbServices.Grape.users
+             *
+             * @description
+             *
+             * Check the existence of users relation to an item by id.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             *  - `fk` – `{*}` - Foreign key for users
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+        R.users.exists = function() {
+          var TargetResource = $injector.get("GrapeUser");
+          var action = TargetResource["::exists::Grape::users"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape.users#findById
+             * @methodOf lbServices.Grape.users
+             *
+             * @description
+             *
+             * Find a related item by id for users.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             *  - `fk` – `{*}` - Foreign key for users
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+        R.users.findById = function() {
+          var TargetResource = $injector.get("GrapeUser");
+          var action = TargetResource["::findById::Grape::users"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape.users#link
+             * @methodOf lbServices.Grape.users
+             *
+             * @description
+             *
+             * Add a related item by id for users.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             *  - `fk` – `{*}` - Foreign key for users
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+        R.users.link = function() {
+          var TargetResource = $injector.get("GrapeUser");
+          var action = TargetResource["::link::Grape::users"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape.users#unlink
+             * @methodOf lbServices.Grape.users
+             *
+             * @description
+             *
+             * Remove the users relation to an item by id.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             *  - `fk` – `{*}` - Foreign key for users
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.users.unlink = function() {
+          var TargetResource = $injector.get("GrapeUser");
+          var action = TargetResource["::unlink::Grape::users"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape.users#updateById
+             * @methodOf lbServices.Grape.users
+             *
+             * @description
+             *
+             * Update a related item by id for users.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             *  - `fk` – `{*}` - Foreign key for users
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+        R.users.updateById = function() {
+          var TargetResource = $injector.get("GrapeUser");
+          var action = TargetResource["::updateById::Grape::users"];
+          return action.apply(R, arguments);
+        };
+    /**
+     * @ngdoc object
+     * @name lbServices.Grape.grapeEntries
+     * @header lbServices.Grape.grapeEntries
+     * @object
+     * @description
+     *
+     * The object `Grape.grapeEntries` groups methods
+     * manipulating `GrapeEntry` instances related to `Grape`.
+     *
+     * Call {@link lbServices.Grape#grapeEntries Grape.grapeEntries()}
+     * to query all related instances.
+     */
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape#grapeEntries
+             * @methodOf lbServices.Grape
+             *
+             * @description
+             *
+             * Queries grapeEntries of Grape.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             *  - `filter` – `{object=}` -
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+        R.grapeEntries = function() {
+          var TargetResource = $injector.get("GrapeEntry");
+          var action = TargetResource["::get::Grape::grapeEntries"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape.grapeEntries#count
+             * @methodOf lbServices.Grape.grapeEntries
+             *
+             * @description
+             *
+             * Counts grapeEntries of Grape.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+        R.grapeEntries.count = function() {
+          var TargetResource = $injector.get("GrapeEntry");
+          var action = TargetResource["::count::Grape::grapeEntries"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape.grapeEntries#create
+             * @methodOf lbServices.Grape.grapeEntries
+             *
+             * @description
+             *
+             * Creates a new instance in grapeEntries of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+        R.grapeEntries.create = function() {
+          var TargetResource = $injector.get("GrapeEntry");
+          var action = TargetResource["::create::Grape::grapeEntries"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape.grapeEntries#createMany
+             * @methodOf lbServices.Grape.grapeEntries
+             *
+             * @description
+             *
+             * Creates a new instance in grapeEntries of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+        R.grapeEntries.createMany = function() {
+          var TargetResource = $injector.get("GrapeEntry");
+          var action = TargetResource["::createMany::Grape::grapeEntries"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape.grapeEntries#destroyAll
+             * @methodOf lbServices.Grape.grapeEntries
+             *
+             * @description
+             *
+             * Deletes all grapeEntries of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.grapeEntries.destroyAll = function() {
+          var TargetResource = $injector.get("GrapeEntry");
+          var action = TargetResource["::delete::Grape::grapeEntries"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape.grapeEntries#destroyById
+             * @methodOf lbServices.Grape.grapeEntries
+             *
+             * @description
+             *
+             * Delete a related item by id for grapeEntries.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             *  - `fk` – `{*}` - Foreign key for grapeEntries
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.grapeEntries.destroyById = function() {
+          var TargetResource = $injector.get("GrapeEntry");
+          var action = TargetResource["::destroyById::Grape::grapeEntries"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape.grapeEntries#findById
+             * @methodOf lbServices.Grape.grapeEntries
+             *
+             * @description
+             *
+             * Find a related item by id for grapeEntries.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             *  - `fk` – `{*}` - Foreign key for grapeEntries
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+        R.grapeEntries.findById = function() {
+          var TargetResource = $injector.get("GrapeEntry");
+          var action = TargetResource["::findById::Grape::grapeEntries"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape.grapeEntries#updateById
+             * @methodOf lbServices.Grape.grapeEntries
+             *
+             * @description
+             *
+             * Update a related item by id for grapeEntries.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             *  - `fk` – `{*}` - Foreign key for grapeEntries
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+        R.grapeEntries.updateById = function() {
+          var TargetResource = $injector.get("GrapeEntry");
+          var action = TargetResource["::updateById::Grape::grapeEntries"];
+          return action.apply(R, arguments);
+        };
+
+
+        return R;
+      }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.GrapeUser
+ * @header lbServices.GrapeUser
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `GrapeUser` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+  module.factory(
+    "GrapeUser",
+    [
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
+        urlBase + "/GrapeUsers/:id",
+          { 'id': '@id' },
+          {
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#prototype$__findById__accessTokens
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Find a related item by id for accessTokens.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for accessTokens
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+            "prototype$__findById__accessTokens": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/GrapeUsers/:id/accessTokens/:fk",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#prototype$__destroyById__accessTokens
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Delete a related item by id for accessTokens.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for accessTokens
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+            "prototype$__destroyById__accessTokens": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/GrapeUsers/:id/accessTokens/:fk",
+              method: "DELETE",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#prototype$__updateById__accessTokens
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Update a related item by id for accessTokens.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for accessTokens
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+            "prototype$__updateById__accessTokens": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/GrapeUsers/:id/accessTokens/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use GrapeUser.joinedgrapes.findById() instead.
+            "prototype$__findById__joinedgrapes": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes/:fk",
+              method: "GET",
+            },
+
+            // INTERNAL. Use GrapeUser.joinedgrapes.destroyById() instead.
+            "prototype$__destroyById__joinedgrapes": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use GrapeUser.joinedgrapes.updateById() instead.
+            "prototype$__updateById__joinedgrapes": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use GrapeUser.joinedgrapes.link() instead.
+            "prototype$__link__joinedgrapes": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes/rel/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use GrapeUser.joinedgrapes.unlink() instead.
+            "prototype$__unlink__joinedgrapes": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes/rel/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use GrapeUser.joinedgrapes.exists() instead.
+            "prototype$__exists__joinedgrapes": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes/rel/:fk",
+              method: "HEAD",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#prototype$__get__accessTokens
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Queries accessTokens of GrapeUser.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `filter` – `{object=}` -
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+            "prototype$__get__accessTokens": {
+              isArray: true,
+              url: urlBase + "/GrapeUsers/:id/accessTokens",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#prototype$__create__accessTokens
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Creates a new instance in accessTokens of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+            "prototype$__create__accessTokens": {
+              url: urlBase + "/GrapeUsers/:id/accessTokens",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#prototype$__delete__accessTokens
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Deletes all accessTokens of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+            "prototype$__delete__accessTokens": {
+              url: urlBase + "/GrapeUsers/:id/accessTokens",
+              method: "DELETE",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#prototype$__count__accessTokens
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Counts accessTokens of GrapeUser.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+            "prototype$__count__accessTokens": {
+              url: urlBase + "/GrapeUsers/:id/accessTokens/count",
+              method: "GET",
+            },
+
+            // INTERNAL. Use GrapeUser.joinedgrapes() instead.
+            "prototype$__get__joinedgrapes": {
+              isArray: true,
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes",
+              method: "GET",
+            },
+
+            // INTERNAL. Use GrapeUser.joinedgrapes.create() instead.
+            "prototype$__create__joinedgrapes": {
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes",
+              method: "POST",
+            },
+
+            // INTERNAL. Use GrapeUser.joinedgrapes.destroyAll() instead.
+            "prototype$__delete__joinedgrapes": {
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use GrapeUser.joinedgrapes.count() instead.
+            "prototype$__count__joinedgrapes": {
+              url: urlBase + "/GrapeUsers/:id/joinedgrapes/count",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#create
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Create a new instance of the model and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+            "create": {
+              url: urlBase + "/GrapeUsers",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#createMany
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Create a new instance of the model and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+            "createMany": {
+              isArray: true,
+              url: urlBase + "/GrapeUsers",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#upsert
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+            "upsert": {
+              url: urlBase + "/GrapeUsers",
+              method: "PUT",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#replaceOrCreate
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Replace an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+            "replaceOrCreate": {
+              url: urlBase + "/GrapeUsers/replaceOrCreate",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#upsertWithWhere
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Update an existing model instance or insert a new one into the data source based on the where criteria.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+            "upsertWithWhere": {
+              url: urlBase + "/GrapeUsers/upsertWithWhere",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#exists
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Check whether a model instance exists in the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `exists` – `{boolean=}` -
+             */
+            "exists": {
+              url: urlBase + "/GrapeUsers/:id/exists",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#findById
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Find a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             *  - `filter` – `{object=}` - Filter defining fields and include
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+            "findById": {
+              url: urlBase + "/GrapeUsers/:id",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#replaceById
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Replace attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+            "replaceById": {
+              url: urlBase + "/GrapeUsers/:id/replace",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#find
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Find all instances of the model matched by filter from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+            "find": {
+              isArray: true,
+              url: urlBase + "/GrapeUsers",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#findOne
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Find first instance of the model matched by filter from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+            "findOne": {
+              url: urlBase + "/GrapeUsers/findOne",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#updateAll
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Update instances of the model matched by {{where}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Information related to the outcome of the operation
+             */
+            "updateAll": {
+              url: urlBase + "/GrapeUsers/update",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#deleteById
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+            "deleteById": {
+              url: urlBase + "/GrapeUsers/:id",
+              method: "DELETE",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#count
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Count instances of the model matched by where from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+            "count": {
+              url: urlBase + "/GrapeUsers/count",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#prototype$updateAttributes
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Patch attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+            "prototype$updateAttributes": {
+              url: urlBase + "/GrapeUsers/:id",
+              method: "PUT",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#createChangeStream
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Create a change stream.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `changes` – `{ReadableStream=}` -
+             */
+            "createChangeStream": {
+              url: urlBase + "/GrapeUsers/change-stream",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#login
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Login a user with username/email and password.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `include` – `{string=}` - Related objects to include in the response. See the description of return value for more details.
+             *   Default value: `user`.
+             *
+             *  - `rememberMe` - `boolean` - Whether the authentication credentials
+             *     should be remembered in localStorage across app/browser restarts.
+             *     Default: `true`.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * The response body contains properties of the AccessToken created on login.
+             * Depending on the value of `include` parameter, the body may contain additional properties:
+             *   - `user` - `U+007BUserU+007D` - Data of the currently logged in user. (`include=user`)
+             *
+             */
+            "login": {
+              params: {
+                include: 'user',
+              },
+              interceptor: {
+                response: function(response) {
+                  var accessToken = response.data;
+                  LoopBackAuth.setUser(
+                    accessToken.id, accessToken.userId, accessToken.user);
+                  LoopBackAuth.rememberMe =
+                    response.config.params.rememberMe !== false;
+                  LoopBackAuth.save();
+                  return response.resource;
+                },
+              },
+              url: urlBase + "/GrapeUsers/login",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#logout
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Logout a user with access token.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `access_token` – `{string}` - Do not supply this argument, it is automatically extracted from request headers.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+            "logout": {
+              interceptor: {
+                response: function(response) {
+                  LoopBackAuth.clearUser();
+                  LoopBackAuth.clearStorage();
+                  return response.resource;
+                },
+                responseError: function(responseError) {
+                  LoopBackAuth.clearUser();
+                  LoopBackAuth.clearStorage();
+                  return responseError.resource;
+                },
+              },
+              url: urlBase + "/GrapeUsers/logout",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#confirm
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Confirm a user registration with email verification token.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `uid` – `{string}` -
+             *
+             *  - `token` – `{string}` -
+             *
+             *  - `redirect` – `{string=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+            "confirm": {
+              url: urlBase + "/GrapeUsers/confirm",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#resetPassword
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Reset password for a user with email.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+            "resetPassword": {
+              url: urlBase + "/GrapeUsers/reset",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Grape.users.findById() instead.
+            "::findById::Grape::users": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/users/:fk",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Grape.users.destroyById() instead.
+            "::destroyById::Grape::users": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/users/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Grape.users.updateById() instead.
+            "::updateById::Grape::users": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/users/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Grape.users.link() instead.
+            "::link::Grape::users": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/users/rel/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Grape.users.unlink() instead.
+            "::unlink::Grape::users": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/users/rel/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Grape.users.exists() instead.
+            "::exists::Grape::users": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/users/rel/:fk",
+              method: "HEAD",
+            },
+
+            // INTERNAL. Use Grape.users() instead.
+            "::get::Grape::users": {
+              isArray: true,
+              url: urlBase + "/Grapes/:id/users",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Grape.users.create() instead.
+            "::create::Grape::users": {
+              url: urlBase + "/Grapes/:id/users",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Grape.users.createMany() instead.
+            "::createMany::Grape::users": {
+              isArray: true,
+              url: urlBase + "/Grapes/:id/users",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Grape.users.destroyAll() instead.
+            "::delete::Grape::users": {
+              url: urlBase + "/Grapes/:id/users",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Grape.users.count() instead.
+            "::count::Grape::users": {
+              url: urlBase + "/Grapes/:id/users/count",
+              method: "GET",
+            },
+
+            // INTERNAL. Use GrapeEntry.user() instead.
+            "::get::GrapeEntry::user": {
+              url: urlBase + "/GrapeEntries/:id/user",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#getCurrent
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Get data of the currently logged user. Fail with HTTP result 401
+             * when there is no user logged in.
+             *
+             * @param {function(Object,Object)=} successCb
+             *    Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *    `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             */
+            'getCurrent': {
+              url: urlBase + "/GrapeUsers" + '/:id',
+              method: 'GET',
+              params: {
+                id: function() {
+                  var id = LoopBackAuth.currentUserId;
+                  if (id == null) id = '__anonymous__';
+                  return id;
+                },
+              },
+              interceptor: {
+                response: function(response) {
+                  LoopBackAuth.currentUserData = response.data;
+                  return response.resource;
+                },
+                responseError: function(responseError) {
+                  LoopBackAuth.clearUser();
+                  LoopBackAuth.clearStorage();
+                  return $q.reject(responseError);
+                },
+              },
+              __isGetCurrentUser__: true,
+            },
+          }
+        );
+
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#patchOrCreate
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+        R["patchOrCreate"] = R["upsert"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#updateOrCreate
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+        R["updateOrCreate"] = R["upsert"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#patchOrCreateWithWhere
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Update an existing model instance or insert a new one into the data source based on the where criteria.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+        R["patchOrCreateWithWhere"] = R["upsertWithWhere"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#update
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Update instances of the model matched by {{where}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Information related to the outcome of the operation
+             */
+        R["update"] = R["updateAll"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#destroyById
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+        R["destroyById"] = R["deleteById"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#removeById
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+        R["removeById"] = R["deleteById"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#patchAttributes
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Patch attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+        R["patchAttributes"] = R["prototype$updateAttributes"];
+
+        /**
+         * @ngdoc method
+         * @name lbServices.GrapeUser#getCachedCurrent
+         * @methodOf lbServices.GrapeUser
+         *
+         * @description
+         *
+         * Get data of the currently logged user that was returned by the last
+         * call to {@link lbServices.GrapeUser#login} or
+         * {@link lbServices.GrapeUser#getCurrent}. Return null when there
+         * is no user logged in or the data of the current user were not fetched
+         * yet.
+         *
+         * @returns {Object} A GrapeUser instance.
+         */
+        R.getCachedCurrent = function() {
+          var data = LoopBackAuth.currentUserData;
+          return data ? new R(data) : null;
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.GrapeUser#isAuthenticated
+         * @methodOf lbServices.GrapeUser
+         *
+         * @returns {boolean} True if the current user is authenticated (logged in).
+         */
+        R.isAuthenticated = function() {
+          return this.getCurrentId() != null;
+        };
+
+        /**
+         * @ngdoc method
+         * @name lbServices.GrapeUser#getCurrentId
+         * @methodOf lbServices.GrapeUser
+         *
+         * @returns {Object} Id of the currently logged-in user or null.
+         */
+        R.getCurrentId = function() {
+          return LoopBackAuth.currentUserId;
+        };
+
+        /**
+        * @ngdoc property
+        * @name lbServices.GrapeUser#modelName
+        * @propertyOf lbServices.GrapeUser
+        * @description
+        * The name of the model represented by this $resource,
+        * i.e. `GrapeUser`.
+        */
+        R.modelName = "GrapeUser";
+
+    /**
+     * @ngdoc object
+     * @name lbServices.GrapeUser.joinedgrapes
+     * @header lbServices.GrapeUser.joinedgrapes
+     * @object
+     * @description
+     *
+     * The object `GrapeUser.joinedgrapes` groups methods
+     * manipulating `Grape` instances related to `GrapeUser`.
+     *
+     * Call {@link lbServices.GrapeUser#joinedgrapes GrapeUser.joinedgrapes()}
+     * to query all related instances.
+     */
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser#joinedgrapes
+             * @methodOf lbServices.GrapeUser
+             *
+             * @description
+             *
+             * Queries joinedgrapes of GrapeUser.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `filter` – `{object=}` -
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Grape` object.)
+             * </em>
+             */
+        R.joinedgrapes = function() {
+          var TargetResource = $injector.get("Grape");
+          var action = TargetResource["::get::GrapeUser::joinedgrapes"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser.joinedgrapes#count
+             * @methodOf lbServices.GrapeUser.joinedgrapes
+             *
+             * @description
+             *
+             * Counts joinedgrapes of GrapeUser.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+        R.joinedgrapes.count = function() {
+          var TargetResource = $injector.get("Grape");
+          var action = TargetResource["::count::GrapeUser::joinedgrapes"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser.joinedgrapes#create
+             * @methodOf lbServices.GrapeUser.joinedgrapes
+             *
+             * @description
+             *
+             * Creates a new instance in joinedgrapes of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Grape` object.)
+             * </em>
+             */
+        R.joinedgrapes.create = function() {
+          var TargetResource = $injector.get("Grape");
+          var action = TargetResource["::create::GrapeUser::joinedgrapes"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser.joinedgrapes#createMany
+             * @methodOf lbServices.GrapeUser.joinedgrapes
+             *
+             * @description
+             *
+             * Creates a new instance in joinedgrapes of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Grape` object.)
+             * </em>
+             */
+        R.joinedgrapes.createMany = function() {
+          var TargetResource = $injector.get("Grape");
+          var action = TargetResource["::createMany::GrapeUser::joinedgrapes"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser.joinedgrapes#destroyAll
+             * @methodOf lbServices.GrapeUser.joinedgrapes
+             *
+             * @description
+             *
+             * Deletes all joinedgrapes of this model.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.joinedgrapes.destroyAll = function() {
+          var TargetResource = $injector.get("Grape");
+          var action = TargetResource["::delete::GrapeUser::joinedgrapes"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser.joinedgrapes#destroyById
+             * @methodOf lbServices.GrapeUser.joinedgrapes
+             *
+             * @description
+             *
+             * Delete a related item by id for joinedgrapes.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for joinedgrapes
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.joinedgrapes.destroyById = function() {
+          var TargetResource = $injector.get("Grape");
+          var action = TargetResource["::destroyById::GrapeUser::joinedgrapes"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser.joinedgrapes#exists
+             * @methodOf lbServices.GrapeUser.joinedgrapes
+             *
+             * @description
+             *
+             * Check the existence of joinedgrapes relation to an item by id.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for joinedgrapes
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Grape` object.)
+             * </em>
+             */
+        R.joinedgrapes.exists = function() {
+          var TargetResource = $injector.get("Grape");
+          var action = TargetResource["::exists::GrapeUser::joinedgrapes"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser.joinedgrapes#findById
+             * @methodOf lbServices.GrapeUser.joinedgrapes
+             *
+             * @description
+             *
+             * Find a related item by id for joinedgrapes.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for joinedgrapes
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Grape` object.)
+             * </em>
+             */
+        R.joinedgrapes.findById = function() {
+          var TargetResource = $injector.get("Grape");
+          var action = TargetResource["::findById::GrapeUser::joinedgrapes"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser.joinedgrapes#link
+             * @methodOf lbServices.GrapeUser.joinedgrapes
+             *
+             * @description
+             *
+             * Add a related item by id for joinedgrapes.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for joinedgrapes
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Grape` object.)
+             * </em>
+             */
+        R.joinedgrapes.link = function() {
+          var TargetResource = $injector.get("Grape");
+          var action = TargetResource["::link::GrapeUser::joinedgrapes"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser.joinedgrapes#unlink
+             * @methodOf lbServices.GrapeUser.joinedgrapes
+             *
+             * @description
+             *
+             * Remove the joinedgrapes relation to an item by id.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for joinedgrapes
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+        R.joinedgrapes.unlink = function() {
+          var TargetResource = $injector.get("Grape");
+          var action = TargetResource["::unlink::GrapeUser::joinedgrapes"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeUser.joinedgrapes#updateById
+             * @methodOf lbServices.GrapeUser.joinedgrapes
+             *
+             * @description
+             *
+             * Update a related item by id for joinedgrapes.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - User id
+             *
+             *  - `fk` – `{*}` - Foreign key for joinedgrapes
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Grape` object.)
+             * </em>
+             */
+        R.joinedgrapes.updateById = function() {
+          var TargetResource = $injector.get("Grape");
+          var action = TargetResource["::updateById::GrapeUser::joinedgrapes"];
+          return action.apply(R, arguments);
+        };
+
+
+        return R;
+      }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.GrapeEntry
+ * @header lbServices.GrapeEntry
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `GrapeEntry` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+  module.factory(
+    "GrapeEntry",
+    [
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
+        urlBase + "/GrapeEntries/:id",
+          { 'id': '@id' },
+          {
+
+            // INTERNAL. Use GrapeEntry.grape() instead.
+            "prototype$__get__grape": {
+              url: urlBase + "/GrapeEntries/:id/grape",
+              method: "GET",
+            },
+
+            // INTERNAL. Use GrapeEntry.user() instead.
+            "prototype$__get__user": {
+              url: urlBase + "/GrapeEntries/:id/user",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#create
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Create a new instance of the model and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+            "create": {
+              url: urlBase + "/GrapeEntries",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#createMany
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Create a new instance of the model and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+            "createMany": {
+              isArray: true,
+              url: urlBase + "/GrapeEntries",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#upsert
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+            "upsert": {
+              url: urlBase + "/GrapeEntries",
+              method: "PUT",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#replaceOrCreate
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Replace an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+            "replaceOrCreate": {
+              url: urlBase + "/GrapeEntries/replaceOrCreate",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#upsertWithWhere
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Update an existing model instance or insert a new one into the data source based on the where criteria.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+            "upsertWithWhere": {
+              url: urlBase + "/GrapeEntries/upsertWithWhere",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#exists
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Check whether a model instance exists in the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `exists` – `{boolean=}` -
+             */
+            "exists": {
+              url: urlBase + "/GrapeEntries/:id/exists",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#findById
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Find a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             *  - `filter` – `{object=}` - Filter defining fields and include
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+            "findById": {
+              url: urlBase + "/GrapeEntries/:id",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#replaceById
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Replace attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+            "replaceById": {
+              url: urlBase + "/GrapeEntries/:id/replace",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#find
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Find all instances of the model matched by filter from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+            "find": {
+              isArray: true,
+              url: urlBase + "/GrapeEntries",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#findOne
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Find first instance of the model matched by filter from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+            "findOne": {
+              url: urlBase + "/GrapeEntries/findOne",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#updateAll
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Update instances of the model matched by {{where}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Information related to the outcome of the operation
+             */
+            "updateAll": {
+              url: urlBase + "/GrapeEntries/update",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#deleteById
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+            "deleteById": {
+              url: urlBase + "/GrapeEntries/:id",
+              method: "DELETE",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#count
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Count instances of the model matched by where from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+            "count": {
+              url: urlBase + "/GrapeEntries/count",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#prototype$updateAttributes
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Patch attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+            "prototype$updateAttributes": {
+              url: urlBase + "/GrapeEntries/:id",
+              method: "PUT",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#createChangeStream
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Create a change stream.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `changes` – `{ReadableStream=}` -
+             */
+            "createChangeStream": {
+              url: urlBase + "/GrapeEntries/change-stream",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Grape.grapeEntries.findById() instead.
+            "::findById::Grape::grapeEntries": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/grapeEntries/:fk",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Grape.grapeEntries.destroyById() instead.
+            "::destroyById::Grape::grapeEntries": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/grapeEntries/:fk",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Grape.grapeEntries.updateById() instead.
+            "::updateById::Grape::grapeEntries": {
+              params: {
+                'fk': '@fk',
+              },
+              url: urlBase + "/Grapes/:id/grapeEntries/:fk",
+              method: "PUT",
+            },
+
+            // INTERNAL. Use Grape.grapeEntries() instead.
+            "::get::Grape::grapeEntries": {
+              isArray: true,
+              url: urlBase + "/Grapes/:id/grapeEntries",
+              method: "GET",
+            },
+
+            // INTERNAL. Use Grape.grapeEntries.create() instead.
+            "::create::Grape::grapeEntries": {
+              url: urlBase + "/Grapes/:id/grapeEntries",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Grape.grapeEntries.createMany() instead.
+            "::createMany::Grape::grapeEntries": {
+              isArray: true,
+              url: urlBase + "/Grapes/:id/grapeEntries",
+              method: "POST",
+            },
+
+            // INTERNAL. Use Grape.grapeEntries.destroyAll() instead.
+            "::delete::Grape::grapeEntries": {
+              url: urlBase + "/Grapes/:id/grapeEntries",
+              method: "DELETE",
+            },
+
+            // INTERNAL. Use Grape.grapeEntries.count() instead.
+            "::count::Grape::grapeEntries": {
+              url: urlBase + "/Grapes/:id/grapeEntries/count",
+              method: "GET",
+            },
+          }
+        );
+
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#patchOrCreate
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+        R["patchOrCreate"] = R["upsert"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#updateOrCreate
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+        R["updateOrCreate"] = R["upsert"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#patchOrCreateWithWhere
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Update an existing model instance or insert a new one into the data source based on the where criteria.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+        R["patchOrCreateWithWhere"] = R["upsertWithWhere"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#update
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Update instances of the model matched by {{where}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Information related to the outcome of the operation
+             */
+        R["update"] = R["updateAll"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#destroyById
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+        R["destroyById"] = R["deleteById"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#removeById
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+        R["removeById"] = R["deleteById"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#patchAttributes
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Patch attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method expects a subset of model properties as request parameters.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeEntry` object.)
+             * </em>
+             */
+        R["patchAttributes"] = R["prototype$updateAttributes"];
+
+
+        /**
+        * @ngdoc property
+        * @name lbServices.GrapeEntry#modelName
+        * @propertyOf lbServices.GrapeEntry
+        * @description
+        * The name of the model represented by this $resource,
+        * i.e. `GrapeEntry`.
+        */
+        R.modelName = "GrapeEntry";
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#grape
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Fetches belongsTo relation grape.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             *  - `refresh` – `{boolean=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Grape` object.)
+             * </em>
+             */
+        R.grape = function() {
+          var TargetResource = $injector.get("Grape");
+          var action = TargetResource["::get::GrapeEntry::grape"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.GrapeEntry#user
+             * @methodOf lbServices.GrapeEntry
+             *
+             * @description
+             *
+             * Fetches belongsTo relation user.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - PersistedModel id
+             *
+             *  - `refresh` – `{boolean=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `GrapeUser` object.)
+             * </em>
+             */
+        R.user = function() {
+          var TargetResource = $injector.get("GrapeUser");
+          var action = TargetResource["::get::GrapeEntry::user"];
+          return action.apply(R, arguments);
+        };
 
 
         return R;

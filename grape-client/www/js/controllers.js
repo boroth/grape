@@ -1,8 +1,8 @@
 angular.module('starter.controllers', ['lbServices'])
 
-    .controller('LoginCtrl', function ($scope, User) {
+    .controller('LoginCtrl', function ($scope, GrapeUser) {
         $scope.login_facebook = function () {
-            User.login
+            GrapeUser.login
         };
     })
 

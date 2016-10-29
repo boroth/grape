@@ -44,5 +44,13 @@
   "Grape": {
     "dataSource": "grape-mysql",
     "public": true
+  },
+  "GrapeUser": {
+    "dataSource": "grape-mysql",
+    "public": true
+  },
+  "GrapeEntry": {
+    "dataSource": "grape-mysql",
+    "public": true
   }
 }

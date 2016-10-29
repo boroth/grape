@@ -1,5 +1,5 @@
 (function (module) {
-    module.controller('SignupController', function ($scope, $state, User, $ionicModal) {
+    module.controller('SignupController', function ($scope, $state, GrapeUser, $ionicModal) {
         var vm = this;
 
         vm.user = {
@@ -27,7 +27,7 @@
 
         $scope.signup = function () {
             vm.loggingIn = true;
-            User.create(vm.user).$promise.then(function (response) {
+            GrapeUser.create(vm.user).$promise.then(function (response) {
                 $scope.modal.show();
             }, function (response) {
                 var error = response.data.error;
