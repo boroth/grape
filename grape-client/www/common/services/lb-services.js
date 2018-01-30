@@ -4627,89 +4627,128 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "POST",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.findById() instead.
-            "::findById::GrapeUser::joinedgrapes": {
+            /**
+             * @ngdoc method
+             * @name lbServices.Grape#ready
+             * @methodOf lbServices.Grape
+             *
+             * @description
+             *
+             * <em>
+             * (The remote method definition does not provide any description.)
+             * </em>
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             * This method does not accept any data. Supply an empty object.
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `grape` – `{Grape=}` -
+             */
+            "ready": {
+              url: urlBase + "/Grapes/:id/ready",
+              method: "POST",
+            },
+
+            // INTERNAL. Use GrapeUser.grapesjoined.findById() instead.
+            "::findById::GrapeUser::grapesjoined": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes/:fk",
+              url: urlBase + "/GrapeUsers/:id/grapesjoined/:fk",
               method: "GET",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.destroyById() instead.
-            "::destroyById::GrapeUser::joinedgrapes": {
+            // INTERNAL. Use GrapeUser.grapesjoined.destroyById() instead.
+            "::destroyById::GrapeUser::grapesjoined": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes/:fk",
+              url: urlBase + "/GrapeUsers/:id/grapesjoined/:fk",
               method: "DELETE",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.updateById() instead.
-            "::updateById::GrapeUser::joinedgrapes": {
+            // INTERNAL. Use GrapeUser.grapesjoined.updateById() instead.
+            "::updateById::GrapeUser::grapesjoined": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes/:fk",
+              url: urlBase + "/GrapeUsers/:id/grapesjoined/:fk",
               method: "PUT",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.link() instead.
-            "::link::GrapeUser::joinedgrapes": {
+            // INTERNAL. Use GrapeUser.grapesjoined.link() instead.
+            "::link::GrapeUser::grapesjoined": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes/rel/:fk",
+              url: urlBase + "/GrapeUsers/:id/grapesjoined/rel/:fk",
               method: "PUT",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.unlink() instead.
-            "::unlink::GrapeUser::joinedgrapes": {
+            // INTERNAL. Use GrapeUser.grapesjoined.unlink() instead.
+            "::unlink::GrapeUser::grapesjoined": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes/rel/:fk",
+              url: urlBase + "/GrapeUsers/:id/grapesjoined/rel/:fk",
               method: "DELETE",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.exists() instead.
-            "::exists::GrapeUser::joinedgrapes": {
+            // INTERNAL. Use GrapeUser.grapesjoined.exists() instead.
+            "::exists::GrapeUser::grapesjoined": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes/rel/:fk",
+              url: urlBase + "/GrapeUsers/:id/grapesjoined/rel/:fk",
               method: "HEAD",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes() instead.
-            "::get::GrapeUser::joinedgrapes": {
+            // INTERNAL. Use GrapeUser.grapesjoined() instead.
+            "::get::GrapeUser::grapesjoined": {
               isArray: true,
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes",
+              url: urlBase + "/GrapeUsers/:id/grapesjoined",
               method: "GET",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.create() instead.
-            "::create::GrapeUser::joinedgrapes": {
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes",
+            // INTERNAL. Use GrapeUser.grapesjoined.create() instead.
+            "::create::GrapeUser::grapesjoined": {
+              url: urlBase + "/GrapeUsers/:id/grapesjoined",
               method: "POST",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.createMany() instead.
-            "::createMany::GrapeUser::joinedgrapes": {
+            // INTERNAL. Use GrapeUser.grapesjoined.createMany() instead.
+            "::createMany::GrapeUser::grapesjoined": {
               isArray: true,
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes",
+              url: urlBase + "/GrapeUsers/:id/grapesjoined",
               method: "POST",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.destroyAll() instead.
-            "::delete::GrapeUser::joinedgrapes": {
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes",
+            // INTERNAL. Use GrapeUser.grapesjoined.destroyAll() instead.
+            "::delete::GrapeUser::grapesjoined": {
+              url: urlBase + "/GrapeUsers/:id/grapesjoined",
               method: "DELETE",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.count() instead.
-            "::count::GrapeUser::joinedgrapes": {
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes/count",
+            // INTERNAL. Use GrapeUser.grapesjoined.count() instead.
+            "::count::GrapeUser::grapesjoined": {
+              url: urlBase + "/GrapeUsers/:id/grapesjoined/count",
               method: "GET",
             },
 
@@ -5821,57 +5860,57 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "PUT",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.findById() instead.
-            "prototype$__findById__joinedgrapes": {
+            // INTERNAL. Use GrapeUser.grapesjoined.findById() instead.
+            "prototype$__findById__grapesjoined": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes/:fk",
+              url: urlBase + "/GrapeUsers/:id/grapesjoined/:fk",
               method: "GET",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.destroyById() instead.
-            "prototype$__destroyById__joinedgrapes": {
+            // INTERNAL. Use GrapeUser.grapesjoined.destroyById() instead.
+            "prototype$__destroyById__grapesjoined": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes/:fk",
+              url: urlBase + "/GrapeUsers/:id/grapesjoined/:fk",
               method: "DELETE",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.updateById() instead.
-            "prototype$__updateById__joinedgrapes": {
+            // INTERNAL. Use GrapeUser.grapesjoined.updateById() instead.
+            "prototype$__updateById__grapesjoined": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes/:fk",
+              url: urlBase + "/GrapeUsers/:id/grapesjoined/:fk",
               method: "PUT",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.link() instead.
-            "prototype$__link__joinedgrapes": {
+            // INTERNAL. Use GrapeUser.grapesjoined.link() instead.
+            "prototype$__link__grapesjoined": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes/rel/:fk",
+              url: urlBase + "/GrapeUsers/:id/grapesjoined/rel/:fk",
               method: "PUT",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.unlink() instead.
-            "prototype$__unlink__joinedgrapes": {
+            // INTERNAL. Use GrapeUser.grapesjoined.unlink() instead.
+            "prototype$__unlink__grapesjoined": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes/rel/:fk",
+              url: urlBase + "/GrapeUsers/:id/grapesjoined/rel/:fk",
               method: "DELETE",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.exists() instead.
-            "prototype$__exists__joinedgrapes": {
+            // INTERNAL. Use GrapeUser.grapesjoined.exists() instead.
+            "prototype$__exists__grapesjoined": {
               params: {
                 'fk': '@fk',
               },
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes/rel/:fk",
+              url: urlBase + "/GrapeUsers/:id/grapesjoined/rel/:fk",
               method: "HEAD",
             },
 
@@ -6012,28 +6051,28 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "GET",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes() instead.
-            "prototype$__get__joinedgrapes": {
+            // INTERNAL. Use GrapeUser.grapesjoined() instead.
+            "prototype$__get__grapesjoined": {
               isArray: true,
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes",
+              url: urlBase + "/GrapeUsers/:id/grapesjoined",
               method: "GET",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.create() instead.
-            "prototype$__create__joinedgrapes": {
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes",
+            // INTERNAL. Use GrapeUser.grapesjoined.create() instead.
+            "prototype$__create__grapesjoined": {
+              url: urlBase + "/GrapeUsers/:id/grapesjoined",
               method: "POST",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.destroyAll() instead.
-            "prototype$__delete__joinedgrapes": {
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes",
+            // INTERNAL. Use GrapeUser.grapesjoined.destroyAll() instead.
+            "prototype$__delete__grapesjoined": {
+              url: urlBase + "/GrapeUsers/:id/grapesjoined",
               method: "DELETE",
             },
 
-            // INTERNAL. Use GrapeUser.joinedgrapes.count() instead.
-            "prototype$__count__joinedgrapes": {
-              url: urlBase + "/GrapeUsers/:id/joinedgrapes/count",
+            // INTERNAL. Use GrapeUser.grapesjoined.count() instead.
+            "prototype$__count__grapesjoined": {
+              url: urlBase + "/GrapeUsers/:id/grapesjoined/count",
               method: "GET",
             },
 
@@ -7166,27 +7205,27 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
 
     /**
      * @ngdoc object
-     * @name lbServices.GrapeUser.joinedgrapes
-     * @header lbServices.GrapeUser.joinedgrapes
+     * @name lbServices.GrapeUser.grapesjoined
+     * @header lbServices.GrapeUser.grapesjoined
      * @object
      * @description
      *
-     * The object `GrapeUser.joinedgrapes` groups methods
+     * The object `GrapeUser.grapesjoined` groups methods
      * manipulating `Grape` instances related to `GrapeUser`.
      *
-     * Call {@link lbServices.GrapeUser#joinedgrapes GrapeUser.joinedgrapes()}
+     * Call {@link lbServices.GrapeUser#grapesjoined GrapeUser.grapesjoined()}
      * to query all related instances.
      */
 
 
             /**
              * @ngdoc method
-             * @name lbServices.GrapeUser#joinedgrapes
+             * @name lbServices.GrapeUser#grapesjoined
              * @methodOf lbServices.GrapeUser
              *
              * @description
              *
-             * Queries joinedgrapes of GrapeUser.
+             * Queries grapesjoined of GrapeUser.
              *
              * @param {Object=} parameters Request parameters.
              *
@@ -7209,20 +7248,20 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              * This usually means the response is a `Grape` object.)
              * </em>
              */
-        R.joinedgrapes = function() {
+        R.grapesjoined = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::get::GrapeUser::joinedgrapes"];
+          var action = TargetResource["::get::GrapeUser::grapesjoined"];
           return action.apply(R, arguments);
         };
 
             /**
              * @ngdoc method
-             * @name lbServices.GrapeUser.joinedgrapes#count
-             * @methodOf lbServices.GrapeUser.joinedgrapes
+             * @name lbServices.GrapeUser.grapesjoined#count
+             * @methodOf lbServices.GrapeUser.grapesjoined
              *
              * @description
              *
-             * Counts joinedgrapes of GrapeUser.
+             * Counts grapesjoined of GrapeUser.
              *
              * @param {Object=} parameters Request parameters.
              *
@@ -7244,20 +7283,20 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              *
              *  - `count` – `{number=}` -
              */
-        R.joinedgrapes.count = function() {
+        R.grapesjoined.count = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::count::GrapeUser::joinedgrapes"];
+          var action = TargetResource["::count::GrapeUser::grapesjoined"];
           return action.apply(R, arguments);
         };
 
             /**
              * @ngdoc method
-             * @name lbServices.GrapeUser.joinedgrapes#create
-             * @methodOf lbServices.GrapeUser.joinedgrapes
+             * @name lbServices.GrapeUser.grapesjoined#create
+             * @methodOf lbServices.GrapeUser.grapesjoined
              *
              * @description
              *
-             * Creates a new instance in joinedgrapes of this model.
+             * Creates a new instance in grapesjoined of this model.
              *
              * @param {Object=} parameters Request parameters.
              *
@@ -7282,20 +7321,20 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              * This usually means the response is a `Grape` object.)
              * </em>
              */
-        R.joinedgrapes.create = function() {
+        R.grapesjoined.create = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::create::GrapeUser::joinedgrapes"];
+          var action = TargetResource["::create::GrapeUser::grapesjoined"];
           return action.apply(R, arguments);
         };
 
             /**
              * @ngdoc method
-             * @name lbServices.GrapeUser.joinedgrapes#createMany
-             * @methodOf lbServices.GrapeUser.joinedgrapes
+             * @name lbServices.GrapeUser.grapesjoined#createMany
+             * @methodOf lbServices.GrapeUser.grapesjoined
              *
              * @description
              *
-             * Creates a new instance in joinedgrapes of this model.
+             * Creates a new instance in grapesjoined of this model.
              *
              * @param {Object=} parameters Request parameters.
              *
@@ -7320,20 +7359,20 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              * This usually means the response is a `Grape` object.)
              * </em>
              */
-        R.joinedgrapes.createMany = function() {
+        R.grapesjoined.createMany = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::createMany::GrapeUser::joinedgrapes"];
+          var action = TargetResource["::createMany::GrapeUser::grapesjoined"];
           return action.apply(R, arguments);
         };
 
             /**
              * @ngdoc method
-             * @name lbServices.GrapeUser.joinedgrapes#destroyAll
-             * @methodOf lbServices.GrapeUser.joinedgrapes
+             * @name lbServices.GrapeUser.grapesjoined#destroyAll
+             * @methodOf lbServices.GrapeUser.grapesjoined
              *
              * @description
              *
-             * Deletes all joinedgrapes of this model.
+             * Deletes all grapesjoined of this model.
              *
              * @param {Object=} parameters Request parameters.
              *
@@ -7351,26 +7390,26 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              *
              * This method returns no data.
              */
-        R.joinedgrapes.destroyAll = function() {
+        R.grapesjoined.destroyAll = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::delete::GrapeUser::joinedgrapes"];
+          var action = TargetResource["::delete::GrapeUser::grapesjoined"];
           return action.apply(R, arguments);
         };
 
             /**
              * @ngdoc method
-             * @name lbServices.GrapeUser.joinedgrapes#destroyById
-             * @methodOf lbServices.GrapeUser.joinedgrapes
+             * @name lbServices.GrapeUser.grapesjoined#destroyById
+             * @methodOf lbServices.GrapeUser.grapesjoined
              *
              * @description
              *
-             * Delete a related item by id for joinedgrapes.
+             * Delete a related item by id for grapesjoined.
              *
              * @param {Object=} parameters Request parameters.
              *
              *  - `id` – `{*}` - User id
              *
-             *  - `fk` – `{*}` - Foreign key for joinedgrapes
+             *  - `fk` – `{*}` - Foreign key for grapesjoined
              *
              * @param {function(Object,Object)=} successCb
              *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -7384,26 +7423,26 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              *
              * This method returns no data.
              */
-        R.joinedgrapes.destroyById = function() {
+        R.grapesjoined.destroyById = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::destroyById::GrapeUser::joinedgrapes"];
+          var action = TargetResource["::destroyById::GrapeUser::grapesjoined"];
           return action.apply(R, arguments);
         };
 
             /**
              * @ngdoc method
-             * @name lbServices.GrapeUser.joinedgrapes#exists
-             * @methodOf lbServices.GrapeUser.joinedgrapes
+             * @name lbServices.GrapeUser.grapesjoined#exists
+             * @methodOf lbServices.GrapeUser.grapesjoined
              *
              * @description
              *
-             * Check the existence of joinedgrapes relation to an item by id.
+             * Check the existence of grapesjoined relation to an item by id.
              *
              * @param {Object=} parameters Request parameters.
              *
              *  - `id` – `{*}` - User id
              *
-             *  - `fk` – `{*}` - Foreign key for joinedgrapes
+             *  - `fk` – `{*}` - Foreign key for grapesjoined
              *
              * @param {function(Object,Object)=} successCb
              *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -7420,26 +7459,26 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              * This usually means the response is a `Grape` object.)
              * </em>
              */
-        R.joinedgrapes.exists = function() {
+        R.grapesjoined.exists = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::exists::GrapeUser::joinedgrapes"];
+          var action = TargetResource["::exists::GrapeUser::grapesjoined"];
           return action.apply(R, arguments);
         };
 
             /**
              * @ngdoc method
-             * @name lbServices.GrapeUser.joinedgrapes#findById
-             * @methodOf lbServices.GrapeUser.joinedgrapes
+             * @name lbServices.GrapeUser.grapesjoined#findById
+             * @methodOf lbServices.GrapeUser.grapesjoined
              *
              * @description
              *
-             * Find a related item by id for joinedgrapes.
+             * Find a related item by id for grapesjoined.
              *
              * @param {Object=} parameters Request parameters.
              *
              *  - `id` – `{*}` - User id
              *
-             *  - `fk` – `{*}` - Foreign key for joinedgrapes
+             *  - `fk` – `{*}` - Foreign key for grapesjoined
              *
              * @param {function(Object,Object)=} successCb
              *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -7456,26 +7495,26 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              * This usually means the response is a `Grape` object.)
              * </em>
              */
-        R.joinedgrapes.findById = function() {
+        R.grapesjoined.findById = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::findById::GrapeUser::joinedgrapes"];
+          var action = TargetResource["::findById::GrapeUser::grapesjoined"];
           return action.apply(R, arguments);
         };
 
             /**
              * @ngdoc method
-             * @name lbServices.GrapeUser.joinedgrapes#link
-             * @methodOf lbServices.GrapeUser.joinedgrapes
+             * @name lbServices.GrapeUser.grapesjoined#link
+             * @methodOf lbServices.GrapeUser.grapesjoined
              *
              * @description
              *
-             * Add a related item by id for joinedgrapes.
+             * Add a related item by id for grapesjoined.
              *
              * @param {Object=} parameters Request parameters.
              *
              *  - `id` – `{*}` - User id
              *
-             *  - `fk` – `{*}` - Foreign key for joinedgrapes
+             *  - `fk` – `{*}` - Foreign key for grapesjoined
              *
              * @param {Object} postData Request data.
              *
@@ -7496,26 +7535,26 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              * This usually means the response is a `Grape` object.)
              * </em>
              */
-        R.joinedgrapes.link = function() {
+        R.grapesjoined.link = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::link::GrapeUser::joinedgrapes"];
+          var action = TargetResource["::link::GrapeUser::grapesjoined"];
           return action.apply(R, arguments);
         };
 
             /**
              * @ngdoc method
-             * @name lbServices.GrapeUser.joinedgrapes#unlink
-             * @methodOf lbServices.GrapeUser.joinedgrapes
+             * @name lbServices.GrapeUser.grapesjoined#unlink
+             * @methodOf lbServices.GrapeUser.grapesjoined
              *
              * @description
              *
-             * Remove the joinedgrapes relation to an item by id.
+             * Remove the grapesjoined relation to an item by id.
              *
              * @param {Object=} parameters Request parameters.
              *
              *  - `id` – `{*}` - User id
              *
-             *  - `fk` – `{*}` - Foreign key for joinedgrapes
+             *  - `fk` – `{*}` - Foreign key for grapesjoined
              *
              * @param {function(Object,Object)=} successCb
              *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -7529,26 +7568,26 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              *
              * This method returns no data.
              */
-        R.joinedgrapes.unlink = function() {
+        R.grapesjoined.unlink = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::unlink::GrapeUser::joinedgrapes"];
+          var action = TargetResource["::unlink::GrapeUser::grapesjoined"];
           return action.apply(R, arguments);
         };
 
             /**
              * @ngdoc method
-             * @name lbServices.GrapeUser.joinedgrapes#updateById
-             * @methodOf lbServices.GrapeUser.joinedgrapes
+             * @name lbServices.GrapeUser.grapesjoined#updateById
+             * @methodOf lbServices.GrapeUser.grapesjoined
              *
              * @description
              *
-             * Update a related item by id for joinedgrapes.
+             * Update a related item by id for grapesjoined.
              *
              * @param {Object=} parameters Request parameters.
              *
              *  - `id` – `{*}` - User id
              *
-             *  - `fk` – `{*}` - Foreign key for joinedgrapes
+             *  - `fk` – `{*}` - Foreign key for grapesjoined
              *
              * @param {Object} postData Request data.
              *
@@ -7569,9 +7608,9 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              * This usually means the response is a `Grape` object.)
              * </em>
              */
-        R.joinedgrapes.updateById = function() {
+        R.grapesjoined.updateById = function() {
           var TargetResource = $injector.get("Grape");
-          var action = TargetResource["::updateById::GrapeUser::joinedgrapes"];
+          var action = TargetResource["::updateById::GrapeUser::grapesjoined"];
           return action.apply(R, arguments);
         };
 

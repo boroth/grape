@@ -1,0 +1,25 @@
+<ion-view view-title="Create Grape Entries">
+    <ion-content class="padding">
+        <form name="grape_entry_1" ng-submit="vm.add_entry(0)">
+            <div class="list list-inset">
+                <div class="item" grape-form-field="entry1">
+                    <input type="text"
+                           placeholder="Name"
+                           ng-model="vm.grapeEntries[0].name"
+                           ui-validate="$value != vm.grapeEntries[1].name && $value != vm.grapeEntries[2].name"
+                           ui-validate-watch="['vm.grapeEntries[1]', 'vm.grapeEntries[2]']"
+                           required />
+
+                    <div ng-messages>
+                        <div ng-message="required">Name is required.</div>
+                        <div ng-message="duplicate">RESPECT THE GRAPE! You cannot submit the same entry more than once.</div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="button button-balanced" ng-disabled="vm.grapeEntries[0].submitting">
+                Submit Entry
+            </button>
+        </form>
+    </ion-content>
+</ion-view>

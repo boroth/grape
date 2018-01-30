@@ -25,7 +25,8 @@ angular.module('starter', [
     'Grape.Login',
     'Grape.Signup',
     'Grape.Create',
-    'Grape.Join'
+    'Grape.Join',
+    'Grape.Play'
 ])
 
     .run(function ($ionicPlatform, $rootScope, $user, $state, LoopBackAuth) {
@@ -108,15 +109,14 @@ angular.module('starter', [
             })
 
             // setup an abstract state for the tabs directive
-            .state('grape', {
-                url: '/grape',
+            .state('main', {
                 abstract: true,
                 templateUrl: 'templates/tabs.html'
             })
 
             // Each tab has its own nav history stack:
 
-            .state('grape.dash', {
+            .state('main.dash', {
                 url: '/dash',
                 views: {
                     'grape-dash': {
@@ -126,7 +126,7 @@ angular.module('starter', [
                 }
             })
 
-            .state('grape.create', {
+            .state('main.create', {
                 url: '/create',
                 views: {
                     'grape-create': {
@@ -136,7 +136,7 @@ angular.module('starter', [
                 }
             })
 
-            .state('grape.join', {
+            .state('main.join', {
                 url: '/join',
                 views: {
                     'grape-join': {
@@ -144,12 +144,28 @@ angular.module('starter', [
                         controller: 'GrapeJoinController as vm'
                     }
                 }
+            })
+
+            .state('grape', {
+                url: '/grape',
+                abstract: true,
+                templateUrl: 'templates/grape-tabs.html'
+            })
+
+            .state('grape.play', {
+                url: '/:id/play',
+                views: {
+                    'grape-play': {
+                        templateUrl: 'app/grape-play/grape-play-1.html',
+                        controller: 'GrapePlayController as vm'
+                    }
+                }
             });
 
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise( function($injector, $location) {
             var $state = $injector.get("$state");
-            $state.go('grape.dash');
+            $state.go('main.dash');
         });
 
         $httpProvider.interceptors.push(function() {

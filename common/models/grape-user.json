@@ -8,7 +8,7 @@
   "properties": {},
   "validations": [],
   "relations": {
-    "joinedgrapes": {
+    "grapesjoined": {
       "type": "hasAndBelongsToMany",
       "model": "Grape",
       "foreignKey": ""

@@ -13,7 +13,7 @@
                 username: vm.username,
                 password: vm.password
             }).$promise.then(function (response) {
-                $state.go('grape.create');
+                $state.go('main.create');
             }, function (error) {
                 vm.loggingIn = false;
             });

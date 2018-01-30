@@ -1,14 +1,20 @@
 'use strict';
-
 module.exports = function(Grape) {
+    var LoopBackContext = require('loopback-context');
+
+    var statuses = {
+        "open": 1,
+        "ready": 2,
+        "elimination": 3
+    };
+
     Grape.beforeRemote('create', function(ctx, modelInstance, next) {
         ctx.args.data.userId = ctx.req.accessToken.userId;
         next();
     });
 
     Grape.join = function (name, password, cb) {
-        console.log(name);
-        console.log(password);
+        var ctx = LoopBackContext.getCurrentContext().active;
 
         // Find grape by name
         Grape.findOne({
@@ -33,13 +39,15 @@ module.exports = function(Grape) {
             }
             // Add user to Grape
             else {
-                // Grape.addUser()
-                console.log('success');
-                console.log(grape);
-            }
+                Grape.app.models.GrapeUser.findById(ctx.currentUser.id, function (err, user) {
+                    user.grapesjoined.add(grape, function (err, response) {
+                        console.log('Server: User ' + user.username + ' has joined Grape ' + grape.name + '.');
 
-            // Return
-            cb(null, grape);
+                        // Return
+                        cb(null, grape);
+                    });
+                });
+            }
         });
 
     };
@@ -49,6 +57,22 @@ module.exports = function(Grape) {
             {arg: 'name', type: 'string'},
             {arg: 'password', type: 'string'}
         ],
+        returns: {arg: 'grape', type: 'Grape'}
+    });
+
+    Grape.ready = function (id, cb) {
+        Grape.findById(id, function (err, grape) {
+            // Move grape to next status
+            grape.status.updateAttribute('status', statuses.ready, function (err, grape) {
+                cb(grape)
+            });
+        })
+    };
+
+    Grape.remoteMethod('ready', {
+        http: {
+            path: '/:id/ready'
+        },
         returns: {arg: 'grape', type: 'Grape'}
     });
 };

@@ -1,11 +1,34 @@
 'use strict';
 
 var loopback = require('loopback');
+var LoopBackContext = require('loopback-context');
 var boot = require('loopback-boot');
 var PassportConfigurator =
     require('loopback-component-passport').PassportConfigurator;
 
 var app = module.exports = loopback();
+
+
+app.use(LoopBackContext.perRequest());
+app.use(loopback.token());
+app.use(function setCurrentUser(req, res, next) {
+  if (!req.accessToken) {
+    return next();
+  }
+  app.models.GrapeUser.findById(req.accessToken.userId, function(err, user) {
+    if (err) {
+      return next(err);
+    }
+    if (!user) {
+      return next(new Error('No user with this access token was found.'));
+    }
+    var ctx = LoopBackContext.getCurrentContext();
+    if (ctx) {
+      ctx.set('currentUser', user);
+    }
+    next();
+  });
+});
 
 app.start = function() {
 
@@ -32,7 +55,24 @@ app.start = function() {
 boot(app, __dirname, function(err) {
   if (err) throw err;
 
+
   // start the server if `$ node server.js`
-  if (require.main === module)
-    app.start();
+  if (require.main === module) {
+
+    // Start app
+    app.io = require('socket.io')(app.start());
+
+    // Handle socket connections
+    app.io.on('connection', function (socket) {
+      console.log('a user connected');
+
+      socket.on('subscribe', function (room) {
+        console.log('joining room', room);
+        socket.join(room);
+      });
+      socket.on('disconnect', function () {
+        console.log('user disconnected');
+      });
+    });
+  }
 });

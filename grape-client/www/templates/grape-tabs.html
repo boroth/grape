@@ -1,0 +1,19 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+
+    <!-- Grpae Tab -->
+    <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/grape/{{ vm.grape.id }}/play">
+        <ion-nav-view name="grape-play"></ion-nav-view>
+    </ion-tab>
+
+    <!-- GrapeUsers Tab -->
+    <ion-tab title="Users" icon-off="ion-ios-plus-outline" icon-on="ion-ios-plus" href="#/grape/{{ grape.id }}/users">
+        <ion-nav-view name="grape-users"></ion-nav-view>
+    </ion-tab>
+
+
+</ion-tabs>
